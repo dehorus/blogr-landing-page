@@ -1,0 +1,579 @@
+:root {
+    --color-dark-blue: hsl(208, 49%, 24%);
+    --light-red: hsl(356, 100%, 66%);
+    --super-light-red: hsl(355, 100%, 74%);
+
+    /* Neutral colors */
+
+    --white-text: hsl(0, 0%, 100%);
+    --Grayish-blue-footer-text: hsl(240, 2%, 79%);
+    --Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+    --Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+
+    /* Gradients */
+
+    /* Backrdound Gradient CTA: Mobile*/
+
+    --GVery-light-red: hsl(13, 100%, 72%);
+    --GLight-red: hsl(353, 100%, 62%);
+
+    /*Body Gradients */
+
+    --Very-dark-gray-blue: hsl(237, 17%, 21%);
+    --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+
+    /* Fonts */
+
+    --font-overpass: 'Overpass', sans-serif;
+    --font-ubuntu: 'Ubuntu', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+    overflow-x: hidden;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  h1, h2, h3, h4, h5 { font-family: 'Ubuntu', sans-serif; font-weight: 700;}
+  h1 { font-size: 36px;} h2 { font-size: 1.6em; color: var(--color-dark-blue);} h3 { font-size: 1.2em;} h4 { font-size: 1em;}
+  /* Herramientas - Contenedores */
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .btn {
+      width: 15em;
+      height: 4em;
+      cursor: pointer;
+      background-color: transparent;
+      border-style: solid;
+      border-color: white;
+      border-width: 0.5px;
+      border-radius: 5em;
+      color: white;
+      font-family: var(--font-ubuntu);
+      font-weight: 700;
+  }
+
+  .bg-gradient {
+    background-color: var(--light-red);
+  }
+
+  /* Header - Nav - Links */
+
+  header {
+      background-color: transparent;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100px;
+      z-index: 999;
+      transition: 0.3s ease-in-out;
+  }
+
+  .content-header {
+      width: 95%;
+      margin: 2em auto;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  nav {
+    position: absolute;
+    top: -600px;
+    background-color: white;
+    width: 90%;
+    left: 4%;
+    transition: 0.5s ;
+    z-index: 998;
+  }
+
+  .active-nav {
+    top: 85px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  nav ul li{
+    transition: 0.5s;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0.5em auto;
+    width: 50%;;
+  }
+
+  nav ul li .arrow{
+    color: var(--light-red);
+    width: 10px;
+    height: 8px;
+  }
+
+  nav .signs-button hr {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    background-color: white;
+  }
+
+  .hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+    background-color: white;
+  }
+
+  .signs-button button {
+    width: 10em;
+    height: 4em;
+    margin: 0.5em 31.7%;
+  }
+  .signs-button .btn-log {
+    background-color: white;
+    color: var(--Very-dark-desaturated-blue);
+    transition: 0.5s;
+  }
+
+  .signs-button .btn-log:hover {
+    border-color: var(--Very-dark-desaturated-blue);
+    color: var(--Very-dark-desaturated-blue);
+  }
+  .signs-button .btn-sign {
+    background-image: linear-gradient(to left, var(--GVery-light-red), var(--GLight-red));
+  }
+  .nav li a {
+    text-decoration: none;
+    color: var(--color-dark-blue);
+  }
+  nav ul li ul {
+    visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+  background-color: whitesmoke;
+  width: 90%;
+  margin: 0 auto;
+  height: 130%;
+  }
+
+  nav ul li:hover > ul, nav ul li ul a:hover {
+    visibility: visible;
+  opacity: 1;
+  display: block;
+  }
+
+  nav ul li ul li {
+    clear: both;
+    width: 100%;
+    font-size: 16px;
+    margin: 0.5em 0;
+  }
+
+  nav ul li ul li:first-child {
+    padding-top: 1em;
+  }
+
+  .reveal-nav {
+      top: 60px;
+  }
+
+  .logo {
+      width: 150px;
+  }
+
+  .logo a {
+      font-size: 2.8em;
+      text-decoration: none;
+      font-family: var(--font-ubuntu);
+      color: var(--white-text);
+  }
+
+  /* Body */
+
+  /*Hero */
+
+  main {
+      background-color: var(--white-text);
+  }
+
+  main .hero {
+      height: 75vh;
+      background-image: url(images/bg-pattern-intro.svg), -webkit-gradient(linear, top, bottom, from(var(--GVery-light-red)), to( var(--GLight-red)));
+      background-image: url(images/bg-pattern-intro.svg), linear-gradient(to bottom, var(--GVery-light-red), var(--GLight-red));
+      position: relative;
+      z-index: 900;
+      background-repeat: no-repeat;
+        background-position-x: -300px, left;
+        background-position-y: center;
+        background-size: 300%;
+        padding: 3rem 1rem 3rem 1rem;
+        border-radius: 0 0 0 70px;
+  }
+
+  .hero .text-intro {
+      width: 100%;
+      margin: 10em 0;
+  }
+
+  .text-intro .title-hero p {
+      text-align: center;
+      color: white;
+      font-size: 2.8em;
+  }
+  .text-intro .title-hero .opacid {
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+    font-size: 1.5em;
+  }
+
+  .buttons-hero {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2em;
+  }
+  .buttons-hero button {
+      margin: 0 0.5em;
+  }
+
+  .buttons-hero .btn-log {
+      background-color: white;
+      color: var(--light-red);
+      transition: 0.5s ease-in-out;
+  }
+
+  .btn-log:hover { 
+      background-color: transparent;
+      color: white;
+  }
+
+  .btn-sign {
+    transition: 0.5s ease-in-out;
+  }
+
+  .btn-sign:hover {
+    background-color: white;
+    color: var(--light-red);
+  }
+
+/* Info -  Section - body */
+
+.info {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.info h2 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.info img {
+  width: 100%;
+  margin: 2em 0;
+}
+
+.info p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: 600;
+  color: var(--Very-dark-grayish-blue-body-copy);
+}
+
+.info-2 img {
+  width: 100%;
+  position: absolute;
+  top: -15em;
+  left: 0;
+}
+.info-2 {
+  position: relative;
+  width: 100%;
+  height: 55vh;
+  margin-top: 18em;
+  background-image: url(images/bg-pattern-circles.svg), linear-gradient(var(--Very-dark-gray-blue), var(--Very-dark-desaturated-blue));
+  background-repeat: no-repeat;
+  background-position-x: -50px, left;
+  background-position-y: -150px,center;
+  background-size: 120%;
+  -webkit-border-top-right-radius: 50px;
+-webkit-border-bottom-left-radius: 50px;
+-moz-border-radius-topright: 50px;
+-moz-border-radius-bottomleft: 50px;
+border-top-right-radius: 50px;
+border-bottom-left-radius: 50px;
+}
+
+.info-2 .text-info2 {
+  padding-top: 13em;
+  width: 85%;
+  margin: 0 auto;
+}
+.info-2 .text-info2 h2 {
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.info-2 .text-info2 p {
+  margin-top: 1em;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+/* offers - section - body*/
+
+.offers {
+  width: 100%;
+}
+
+.offers img {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.offers .offer-text {
+  margin-top: 2em;
+}
+.offers .offer-text h3 {
+  text-align: center;
+  color: var(--Very-dark-grayish-blue-body-copy);
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.offers .offer-text p {
+  text-align: center;
+  line-height: 30px;
+  color: var(--Very-dark-grayish-blue-body-copy);
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 4em;
+  background-color: var(--Very-dark-black-blue-footer-background);
+  -webkit-border-top-right-radius: 60px;
+-moz-border-radius-topright: 60px;
+border-top-right-radius: 60px;
+}
+
+.container-footer {
+  width: 60%;
+  margin: 0 auto;
+}
+
+footer .logo-container {  
+  padding-top: 2em;
+}
+footer .logo-container h2 {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2em;
+  text-align: center;
+}
+
+.logo-container a {
+  text-decoration: none;
+  color: white;
+}
+
+.foot-nav {
+  width: 100%;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  color: var(--Grayish-blue-footer-text);
+  font-weight: 600;
+}
+
+.foot-nav ul {
+  list-style-type: none;
+}
+.foot-nav h3 {
+  margin-top: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.foot-nav h3 a {
+  text-decoration: none;
+  color: white  ;
+}
+
+.foot-nav ul li {
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+
+
+/** FrontendMentor att **/
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }  
+
+
+  /* Media Querys destkop */
+
+  @media (min-width: 945px) {
+    .container {
+      width: 80%;
+    }
+    .content-header {
+      width: 85%;
+    }
+    .content-header .hamburger {
+      display: none;
+    }
+
+    nav {
+      position: relative;
+      top: inherit;
+      background-color: transparent;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 40%;
+    }
+
+    nav ul li {
+      width: 100%;
+      margin: 0.5em 0;
+    }
+
+    nav ul li a {
+      color: white !important;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    nav .signs-button {
+      display: flex;
+      flex-direction: row;
+     
+    }
+
+    nav .signs-button hr {
+      visibility: hidden;
+    }
+
+    nav .signs-button button {
+      width: 20em;
+      height: 3em;
+      margin: 0.5em 0.5em;
+    }
+
+    /* Body Content */
+
+    .info img {
+      width: auto;
+      height: 60%;
+      position: absolute;
+      right: -8em;
+      top: 50em;
+    }
+
+    .info .info-box {
+      width: 50%;
+    }
+
+    .info .info-box p {
+      text-align: left;
+    }
+    .info-2 {
+      height: 45vh;
+    }
+
+    .info-2 img {
+      width: 40%;
+      top: -7em;
+      left: 5em;
+    }
+
+    .info-2 .text-info2 {
+      width: 50%;
+      margin: 0;
+      margin-left: 55%;
+      padding-top: 8em;
+    }
+    .offers {
+      position: relative;
+      height: 60vh;
+    }
+
+    .offers img {
+      width: 65%;
+      height: 45em;
+      position: absolute;
+      left: -15em;
+      top: -10em;
+      margin-top: 0;
+    }
+
+    .offers .content-text-offer {
+      width: 50%;
+      margin: 0;
+      margin-left: 50%;
+      margin-top: 17%;
+    }
+
+    .offers .offer-text p, .offers .offer-text h3 {
+      text-align: left;
+    }
+
+    .container-footer {
+      width: 85%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    footer .logo-container {
+      padding-top: 5em;
+    }
+
+    footer .logo-container h2 {
+      font-size: 3em;
+    }
+
+    footer .foot-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .foot-nav .list-foot h3 {
+      text-align: left;
+    }
+
+    .foot-nav ul li {
+      text-align: left;
+      margin: 2em 0;
+    }
+  }
